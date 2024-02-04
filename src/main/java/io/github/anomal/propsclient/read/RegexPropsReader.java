@@ -1,4 +1,4 @@
-package read;
+package io.github.anomal.propsclient.read;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

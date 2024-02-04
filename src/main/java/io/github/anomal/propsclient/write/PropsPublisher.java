@@ -1,4 +1,4 @@
-package write;
+package io.github.anomal.propsclient.write;
 
 import java.util.Properties;
 

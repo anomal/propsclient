@@ -1,4 +1,4 @@
-package read;
+package io.github.anomal.propsclient.read;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.nio.file.*;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import write.PropsPublisher;
-import write.RestPropsPublisher;
+import io.github.anomal.propsclient.write.PropsPublisher;
+import io.github.anomal.propsclient.write.RestPropsPublisher;
 
 public class Monitor {
 

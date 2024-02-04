@@ -1,4 +1,4 @@
-package read;
+package io.github.anomal.propsclient.read;
 
 import java.io.FileInputStream;
 import java.io.IOException;

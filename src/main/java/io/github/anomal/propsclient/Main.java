@@ -2,12 +2,9 @@ package io.github.anomal.propsclient;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import read.Monitor;
-import read.RegexPropsReader;
-import read.SimplePropsReader;
-import read.PropsReader;
-import write.PropsPublisher;
-import write.RestPropsPublisher;
+import io.github.anomal.propsclient.read.Monitor;
+import io.github.anomal.propsclient.read.SimplePropsReader;
+import io.github.anomal.propsclient.read.PropsReader;
 
 import java.io.File;
 import java.io.IOException;

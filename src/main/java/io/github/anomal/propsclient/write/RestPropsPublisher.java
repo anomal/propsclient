@@ -1,9 +1,8 @@
-package write;
+package io.github.anomal.propsclient.write;
 
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import read.Monitor;
 
 import java.io.IOException;
 import java.net.URI;

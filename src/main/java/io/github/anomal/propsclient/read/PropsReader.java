@@ -1,4 +1,4 @@
-package read;
+package io.github.anomal.propsclient.read;
 
 import java.io.IOException;
 import java.util.Properties;
