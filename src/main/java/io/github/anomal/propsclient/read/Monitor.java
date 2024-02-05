@@ -59,7 +59,7 @@ public class Monitor {
                 }
                 key.reset();
             }
-        } catch (InterruptedException e){
+        } catch (InterruptedException | RuntimeException e){
             e.printStackTrace();
             System.exit(1);
         }
