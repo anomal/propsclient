@@ -20,16 +20,19 @@ public class Main {
             System.exit(1);
         }
 
+        String configPath = args[0];
+
         PropsReader propertiesReader = new SimplePropsReader();
         Properties clientConf = null;
         try {
-            clientConf = propertiesReader.readProperties(args[0]);
+            clientConf = propertiesReader.readProperties(configPath);
         } catch (IOException e) {
             System.err.println(e.getMessage());
             System.exit(1);
         }
 
-        String watchDir = clientConf.getProperty("inputdir");
+        String watchDir = getProperty("inputdir", clientConf);
+        LOGGER.debug("inputdir is {}", watchDir);
         Path watchDirPath = Paths.get(watchDir);
         if (!Files.exists(watchDirPath)) {
             System.err.println(String.format("Watch directory %s does not exist", watchDir));
@@ -41,10 +44,18 @@ public class Main {
             System.exit(1);
         }
 
-        String apiUrl = clientConf.getProperty("apiurl");
+        String apiUrl = getProperty("apiurl", clientConf);
         LOGGER.debug("apiurl is {}", apiUrl);
-        String regex = clientConf.getProperty("regex");
+        String regex = getProperty("regex", clientConf);
         LOGGER.debug("regex is {}", regex);
         new Monitor(watchDirPath, regex, apiUrl).start();
+    }
+
+    private static String getProperty(String key, Properties properties) {
+        if (!properties.containsKey(key)) {
+            System.err.println(key + " missing from client configuration");
+            System.exit(1);
+        }
+        return properties.getProperty(key);
     }
 }
