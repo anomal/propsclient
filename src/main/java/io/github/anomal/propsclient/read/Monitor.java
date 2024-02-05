@@ -29,7 +29,7 @@ public class Monitor {
             watchService = FileSystems.getDefault().newWatchService();
             watchDirPath.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
             System.exit(1);
         }
 
@@ -60,7 +60,7 @@ public class Monitor {
                 key.reset();
             }
         } catch (InterruptedException | RuntimeException e){
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
             System.exit(1);
         }
     }
