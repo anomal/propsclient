@@ -2,7 +2,7 @@
 
 ## How to run
 
-1. Install mvn (Maven).
+1. Install JDK 17+ and `mvn` (Maven).
 2. Create client.properties file:
 ```shell
 inputdir=/var/tmp/clientinput
